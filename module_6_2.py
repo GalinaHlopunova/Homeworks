@@ -1,4 +1,3 @@
-import re
 class Vehicle:
     __COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
 
