@@ -119,21 +119,17 @@ class Cube(Figure):
         super().get_sides()
 
     def get_sides(self):
-        if len(self.__sides) != self.sides_count:
-            if len(self.__sides) == 1:
-                k1 = self.__sides[0]
-                self.__sides = [k1] * 12
-            else:
-                self.__sides = self.sides1
-        else:
+        if len(self.__sides) == 1:
             k1 = self.__sides[0]
             self.__sides = [k1] * 12
+        else:
+            self.__sides = self.sides1
         return self.__sides
 
     def __is_valid_sides(self):
         k = len(self.new_sides)
         for j in range(0, k):
-            if self.new_sides[j] > 0 and k == self.sides_count or k == 1:
+            if self.new_sides[j] > 0 and k == 1:
                 return True
             else:
                 return False
@@ -189,9 +185,9 @@ print(triangle1.get_square())
 print(triangle1.height_())
 print(len(cube1))
 print(len(triangle1))
-cube1.set_sides(3, 6, 6, 6, 7, 8, 9, 7, 1, 2, 6, 2)  # Изменяется
+cube1.set_sides(3, 6, 6, 6, 7, 8, 9, 7, 1, 2, 6, 2)  # Не изменяется
 print(cube1.get_sides())
-cube1.set_sides(3, 6, 6, 6, 7, 8, 9, 7, 1, 2, 6)  # Не зменяется
+cube1.set_sides(3, 6, 6, 6, 7, 8, 9, 7, 1, 2, 6)  # Не изменяется
 print(cube1.get_sides())
 cube1.set_sides(25)  # Изменяется
 print(cube1.get_sides())
