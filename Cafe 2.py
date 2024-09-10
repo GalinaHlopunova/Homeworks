@@ -67,7 +67,6 @@ class Cafe:
                         guest_ = guest
                         break
                         self.closing_cafe()
-
     def closing_cafe(self):
         guest = guest_
         guest.join()
@@ -105,5 +104,5 @@ for guest in guests:
 cafe.guest_arrival(*guests)
 # Обслуживание гостей
 cafe.discuss_guests()
-# Проверка последних столов.
+#Проверка последних столов.
 cafe.closing_cafe()
