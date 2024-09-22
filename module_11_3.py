@@ -1,7 +1,14 @@
 def introspection_info(obj):
     info_dict = {}
     info_dict['type'] = type(obj)
-    info_dict['attributes'] = dir(obj)
+    methods = []
+    attributes = dir(obj)
+    for attr in dir(obj):
+        if callable((getattr(obj, attr))):
+            methods.append(attr)
+            attributes.remove(attr)
+    info_dict['attributes'] = attributes
+    info_dict['methods'] = methods
     info_dict['module'] = __name__
     info_dict['callable'] = callable(obj)
     return info_dict
