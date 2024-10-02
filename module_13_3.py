@@ -2,7 +2,7 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 import asyncio
 
-api = ""
+api = "7652634238:AAEf1a-DiEYi-yFt5JsxckREselK2I4iJa0"
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
@@ -10,11 +10,11 @@ dp = Dispatcher(bot, storage=MemoryStorage())
 @dp.message_handler(commands=['start'])
 async def start(message):
     print("Start message")
-    await message.answer("Привет! Я бот помогающий твоему здоровью.")
+    await message.answer("Привет! Я бот, помогающий твоему здоровью.")
 
 
 @dp.message_handler()
-async def all_massages(message):
+async def all_massages(message: types.Message):
     print("Привет!")
     await message.answer("Введите команду /start, чтобы начать общение.")
 
